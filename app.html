@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detalle del software - SoftHub Repositorio Estudiantil">
+    <title>Detalle - SoftHub</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+    <style>
+        /* Additional styles for detail page */
+        .app-detail-header {
+            padding: 3rem 0;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .app-detail-icon {
+            width: 120px;
+            height: 120px;
+            background: var(--accent-gradient);
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .app-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .meta-badge {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .meta-badge i {
+            color: var(--primary-400);
+        }
+
+        .readme-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .readme-content h1,
+        .readme-content h2,
+        .readme-content h3 {
+            color: var(--text-primary);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .readme-content h1:first-child {
+            margin-top: 0;
+        }
+
+        .readme-content p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .readme-content code {
+            background: var(--bg-input);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            color: var(--primary-400);
+        }
+
+        .readme-content pre {
+            background: var(--bg-input);
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            overflow-x: auto;
+        }
+
+        .readme-content pre code {
+            background: none;
+            padding: 0;
+        }
+
+        .readme-content a {
+            color: var(--primary-400);
+        }
+
+        .readme-content img {
+            max-width: 100%;
+            border-radius: var(--radius-md);
+        }
+
+        .readme-content ul,
+        .readme-content ol {
+            color: var(--text-secondary);
+            padding-left: 1.5rem;
+        }
+
+        .readme-content blockquote {
+            border-left: 4px solid var(--primary-500);
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: var(--text-muted);
+        }
+
+        .sidebar-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .sidebar-card h5 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sidebar-card h5 i {
+            color: var(--primary-400);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 1rem;
+            background: var(--bg-input);
+            border-radius: var(--radius-md);
+        }
+
+        .stat-box .value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-400);
+        }
+
+        .stat-box .label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .language-bar {
+            height: 8px;
+            background: var(--bg-input);
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .language-segment {
+            height: 100%;
+        }
+
+        .languages-list {
+            margin-top: 0.75rem;
+        }
+
+        .language-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .language-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .btn-download {
+            background: var(--accent-gradient);
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 1rem 2rem;
+            border-radius: var(--radius-md);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all var(--transition-fast);
+            text-decoration: none;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--accent-glow);
+            color: white;
+        }
+
+        .ratings-section {
+            margin-top: 2rem;
+        }
+
+        .average-rating {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .big-rating {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+
+        .rating-details {
+            color: var(--text-muted);
+        }
+
+        .rating-details .stars {
+            color: #fbbf24;
+            font-size: 1.25rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i class="bi bi-box-seam-fill me-2"></i>
+                <span class="fw-bold">SoftHub</span>
+            </a>
+            <div class="d-flex align-items-center gap-3">
+                <a href="index.html" class="btn btn-outline-secondary btn-sm">
+                    <i class="bi bi-arrow-left me-1"></i>Volver
+                </a>
+                <button class="btn btn-theme-toggle" id="themeToggle" title="Cambiar tema">
+                    <i class="bi bi-moon-stars-fill"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- App Detail Header -->
+    <section class="app-detail-header" id="appHeader">
+        <div class="container">
+            <div class="d-flex flex-column flex-md-row align-items-start gap-4">
+                <div class="app-detail-icon" id="appIcon">
+                    <i class="bi bi-code-slash"></i>
+                </div>
+                <div class="flex-grow-1">
+                    <h1 class="fw-bold mb-2" id="appName">Cargando...</h1>
+                    <p class="text-muted mb-3" id="appAuthor">
+                        <i class="bi bi-person-circle me-1"></i>
+                        <span>Autor</span>
+                    </p>
+                    <p class="lead" id="appDescription">Cargando descripción...</p>
+                    <div class="app-meta" id="appMeta">
+                        <!-- Meta badges will be inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Main Column - README -->
+                <div class="col-lg-8">
+                    <div class="readme-content" id="readmeContent">
+                        <div class="text-center py-5">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Cargando...</span>
+                            </div>
+                            <p class="mt-2 text-muted">Cargando README...</p>
+                        </div>
+                    </div>
+
+                    <!-- Ratings Section -->
+                    <div class="ratings-section" id="ratingsSection">
+                        <h3 class="fw-bold mb-4">
+                            <i class="bi bi-chat-square-heart me-2" style="color: var(--primary-400);"></i>
+                            Opiniones
+                        </h3>
+                        <div id="ratingsContent">
+                            <div class="text-center py-4">
+                                <div class="spinner-border spinner-border-sm text-primary" role="status"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <!-- Download Button -->
+                    <a href="#" class="btn-download mb-4" id="downloadBtn" target="_blank">
+                        <i class="bi bi-github"></i>
+                        Ver en GitHub
+                    </a>
+
+                    <!-- Stats Card -->
+                    <div class="sidebar-card">
+                        <h5><i class="bi bi-graph-up"></i>Estadísticas</h5>
+                        <div class="stats-grid" id="statsGrid">
+                            <div class="stat-box">
+                                <div class="value" id="statStars">-</div>
+                                <div class="label">Estrellas</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="value" id="statForks">-</div>
+                                <div class="label">Forks</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="value" id="statIssues">-</div>
+                                <div class="label">Issues</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="value" id="statWatchers">-</div>
+                                <div class="label">Watchers</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Languages Card -->
+                    <div class="sidebar-card">
+                        <h5><i class="bi bi-code-square"></i>Lenguajes</h5>
+                        <div class="language-bar" id="languageBar"></div>
+                        <div class="languages-list" id="languagesList"></div>
+                    </div>
+
+                    <!-- Info Card -->
+                    <div class="sidebar-card">
+                        <h5><i class="bi bi-info-circle"></i>Información</h5>
+                        <div id="infoList">
+                            <!-- Info will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container text-center">
+            <span class="text-muted">
+                <i class="bi bi-box-seam-fill me-1"></i>
+                SoftHub © 2026 - Repositorio de Software Estudiantil
+            </span>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/github-api.js"></script>
+    <script src="js/ratings.js"></script>
+    <script>
+        // Language colors (from GitHub)
+        const LANGUAGE_COLORS = {
+            'JavaScript': '#f1e05a',
+            'TypeScript': '#3178c6',
+            'Python': '#3572A5',
+            'Java': '#b07219',
+            'C#': '#178600',
+            'C++': '#f34b7d',
+            'C': '#555555',
+            'PHP': '#4F5D95',
+            'Ruby': '#701516',
+            'Go': '#00ADD8',
+            'Rust': '#dea584',
+            'Swift': '#F05138',
+            'Kotlin': '#A97BFF',
+            'HTML': '#e34c26',
+            'CSS': '#563d7c',
+            'Vue': '#41b883',
+            'Shell': '#89e051',
+            'Jupyter Notebook': '#DA5B0B'
+        };
+
+        // Initialize theme
+        function initTheme() {
+            const themeToggle = document.getElementById('themeToggle');
+            const savedTheme = localStorage.getItem('softhub_theme') || 'dark';
+
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+
+            themeToggle?.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('softhub_theme', newTheme);
+                updateThemeIcon(newTheme);
+            });
+        }
+
+        function updateThemeIcon(theme) {
+            const icon = document.querySelector('#themeToggle i');
+            if (icon) {
+                icon.className = theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-stars-fill';
+            }
+        }
+
+        // Get URL parameters
+        function getUrlParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                id: params.get('id'),
+                url: params.get('url')
+            };
+        }
+
+        // Load app details
+        async function loadAppDetails() {
+            const params = getUrlParams();
+
+            if (!params.url) {
+                document.getElementById('appName').textContent = 'Error: No se especificó URL';
+                return;
+            }
+
+            // Get app info from GitHub
+            const app = await GitHubAPI.getSoftwareInfo(params.url);
+
+            if (!app) {
+                document.getElementById('appName').textContent = 'Error al cargar';
+                document.getElementById('appDescription').textContent = 'No se pudo obtener información del repositorio';
+                return;
+            }
+
+            // Update page title
+            document.title = `${app.name} - SoftHub`;
+
+            // Update header
+            document.getElementById('appName').textContent = app.name;
+            document.getElementById('appAuthor').innerHTML = `
+                <i class="bi bi-person-circle me-1"></i>
+                <a href="${app.authorUrl}" target="_blank" style="color: var(--primary-400);">${app.author}</a>
+            `;
+            document.getElementById('appDescription').textContent = app.description;
+
+            // Update icon
+            const langIcon = GitHubAPI.getLanguageIcon(app.language);
+            document.getElementById('appIcon').innerHTML = `<i class="bi ${langIcon}"></i>`;
+
+            // Update meta badges
+            const metaHtml = `
+                <span class="meta-badge">
+                    <i class="bi bi-code-slash"></i>
+                    ${app.language}
+                </span>
+                <span class="meta-badge">
+                    <i class="bi bi-shield-check"></i>
+                    ${app.license}
+                </span>
+                <span class="meta-badge">
+                    <i class="bi bi-calendar3"></i>
+                    Actualizado ${GitHubAPI.formatDate(app.updatedAt)}
+                </span>
+            `;
+            document.getElementById('appMeta').innerHTML = metaHtml;
+
+            // Update download button
+            document.getElementById('downloadBtn').href = app.githubUrl;
+
+            // Update stats
+            document.getElementById('statStars').textContent = app.stars;
+            document.getElementById('statForks').textContent = app.forks;
+            document.getElementById('statIssues').textContent = app.openIssues;
+            document.getElementById('statWatchers').textContent = app.watchers;
+
+            // Update languages
+            renderLanguages(app.languages);
+
+            // Update info
+            renderInfo(app);
+
+            // Load README
+            await loadReadme(app.author, app.name);
+
+            // Load ratings
+            await loadRatings(app.id);
+        }
+
+        function renderLanguages(languages) {
+            const bar = document.getElementById('languageBar');
+            const list = document.getElementById('languagesList');
+
+            if (!languages || Object.keys(languages).length === 0) {
+                bar.innerHTML = '<div class="language-segment" style="width: 100%; background: var(--border-color);"></div>';
+                list.innerHTML = '<p class="text-muted">No hay información de lenguajes</p>';
+                return;
+            }
+
+            const total = Object.values(languages).reduce((a, b) => a + b, 0);
+            let barHtml = '';
+            let listHtml = '';
+
+            for (const [lang, bytes] of Object.entries(languages)) {
+                const percentage = ((bytes / total) * 100).toFixed(1);
+                const color = LANGUAGE_COLORS[lang] || '#6b5f7a';
+
+                barHtml += `<div class="language-segment" style="width: ${percentage}%; background: ${color};"></div>`;
+                listHtml += `
+                    <div class="language-item">
+                        <span class="language-dot" style="background: ${color};"></span>
+                        <span>${lang}</span>
+                        <span class="ms-auto">${percentage}%</span>
+                    </div>
+                `;
+            }
+
+            bar.innerHTML = barHtml;
+            list.innerHTML = listHtml;
+        }
+
+        function renderInfo(app) {
+            const infoList = document.getElementById('infoList');
+
+            let html = `
+                <div class="d-flex justify-content-between py-2 border-bottom" style="border-color: var(--border-light) !important;">
+                    <span class="text-muted">Creado</span>
+                    <span style="color: var(--text-primary);">${new Date(app.createdAt).toLocaleDateString('es')}</span>
+                </div>
+                <div class="d-flex justify-content-between py-2 border-bottom" style="border-color: var(--border-light) !important;">
+                    <span class="text-muted">Actualizado</span>
+                    <span style="color: var(--text-primary);">${new Date(app.updatedAt).toLocaleDateString('es')}</span>
+                </div>
+                <div class="d-flex justify-content-between py-2 border-bottom" style="border-color: var(--border-light) !important;">
+                    <span class="text-muted">Licencia</span>
+                    <span style="color: var(--text-primary);">${app.license}</span>
+                </div>
+                <div class="d-flex justify-content-between py-2">
+                    <span class="text-muted">Tamaño</span>
+                    <span style="color: var(--text-primary);">${(app.size / 1024).toFixed(1)} MB</span>
+                </div>
+            `;
+
+            if (app.homepage) {
+                html += `
+                    <div class="mt-3">
+                        <a href="${app.homepage}" target="_blank" class="btn btn-outline-secondary btn-sm w-100">
+                            <i class="bi bi-globe me-1"></i>Sitio web
+                        </a>
+                    </div>
+                `;
+            }
+
+            infoList.innerHTML = html;
+        }
+
+        async function loadReadme(owner, repo) {
+            const container = document.getElementById('readmeContent');
+
+            try {
+                const readme = await GitHubAPI.getReadme(owner, repo);
+
+                if (readme) {
+                    // Parse markdown to HTML using marked.js
+                    const html = marked.parse(readme);
+                    container.innerHTML = html;
+                } else {
+                    container.innerHTML = `
+                        <div class="text-center py-5">
+                            <i class="bi bi-file-earmark-x text-muted" style="font-size: 3rem;"></i>
+                            <p class="mt-3 text-muted">No se encontró README en este repositorio</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                container.innerHTML = `
+                    <div class="text-center py-5">
+                        <i class="bi bi-exclamation-triangle text-warning" style="font-size: 3rem;"></i>
+                        <p class="mt-3 text-muted">Error al cargar el README</p>
+                    </div>
+                `;
+            }
+        }
+
+        async function loadRatings(appId) {
+            const container = document.getElementById('ratingsContent');
+
+            // Get ratings
+            const ratings = await RatingsSystem.getRatings(appId);
+            const average = RatingsSystem.calculateAverage(ratings);
+
+            let html = '';
+
+            // Average rating display
+            if (ratings.length > 0) {
+                html += `
+                    <div class="average-rating">
+                        <span class="big-rating">${average}</span>
+                        <div class="rating-details">
+                            <div class="stars">${RatingsSystem.renderStars(average)}</div>
+                            <span>${ratings.length} opinión${ratings.length !== 1 ? 'es' : ''}</span>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Comments
+            html += RatingsSystem.renderComments(ratings);
+
+            // Form
+            html += RatingsSystem.renderForm(appId);
+
+            container.innerHTML = html;
+
+            // Initialize form events
+            RatingsSystem.initFormEvents(appId);
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            initTheme();
+            loadAppDetails();
+        });
+    </script>
+</body>
+
+</html>
