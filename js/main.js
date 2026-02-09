@@ -104,7 +104,7 @@ const SOFTWARE_CATALOG = {
             author_name: "Luis Bustamante",
             featured: false
         }
-,
+        ,
         {
             id: "jhordangalindo-crypto-api",
             github_url: "https://github.com/jhordangalindo/crypto-api",
@@ -310,7 +310,7 @@ function renderCategories() {
 }
 
 /* =====================================================
-   Carga de Software desde GitHub
+   Carga de Software desde archivo JSON estático
    ===================================================== */
 
 async function loadSoftware() {
@@ -320,27 +320,39 @@ async function loadSoftware() {
 
     AppState.isLoading = true;
 
-    // Cargar información de cada app desde GitHub
-    const promises = SOFTWARE_CATALOG.apps.map(async (app) => {
-        const info = await GitHubAPI.getSoftwareInfo(app.github_url);
-        if (info) {
-            // Obtener calificaciones
-            const ratings = await RatingsSystem.getRatings(info.id);
+    try {
+        // Cargar información desde archivo JSON estático
+        const response = await fetch('data/projects.json');
+        if (!response.ok) {
+            throw new Error(`Error al cargar proyectos: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        // Procesar cada proyecto y agregar calificaciones
+        const promises = data.projects.map(async (project) => {
+            // Obtener calificaciones del sistema de ratings
+            const ratings = await RatingsSystem.getRatings(project.id);
             const avgRating = RatingsSystem.calculateAverage(ratings);
 
             return {
-                ...app,
-                ...info,
+                ...project,
                 avgRating: avgRating,
                 totalRatings: ratings.length
             };
-        }
-        return null;
-    });
+        });
 
-    const results = await Promise.all(promises);
-    AppState.apps = results.filter(app => app !== null);
-    AppState.filteredApps = [...AppState.apps];
+        AppState.apps = await Promise.all(promises);
+        AppState.filteredApps = [...AppState.apps];
+
+        console.log(`✅ Cargados ${AppState.apps.length} proyectos desde archivo estático`);
+
+    } catch (error) {
+        console.error('Error cargando proyectos:', error);
+        // Fallback: intentar cargar desde GitHub API (comportamiento anterior)
+        console.log('⚠️ Intentando fallback a GitHub API...');
+        await loadSoftwareFromGitHub();
+    }
 
     // Ocultar spinner
     if (spinner) spinner.style.display = 'none';
@@ -358,6 +370,28 @@ async function loadSoftware() {
     renderFilterButtons();
 
     AppState.isLoading = false;
+}
+
+// Fallback: cargar desde GitHub API (por si el JSON no existe)
+async function loadSoftwareFromGitHub() {
+    const promises = SOFTWARE_CATALOG.apps.map(async (app) => {
+        const info = await GitHubAPI.getSoftwareInfo(app.github_url);
+        if (info) {
+            const ratings = await RatingsSystem.getRatings(info.id);
+            const avgRating = RatingsSystem.calculateAverage(ratings);
+            return {
+                ...app,
+                ...info,
+                avgRating: avgRating,
+                totalRatings: ratings.length
+            };
+        }
+        return null;
+    });
+
+    const results = await Promise.all(promises);
+    AppState.apps = results.filter(app => app !== null);
+    AppState.filteredApps = [...AppState.apps];
 }
 
 function updateStats() {
