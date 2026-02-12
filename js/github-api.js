@@ -167,8 +167,10 @@ const GitHubAPI = {
         try {
             const data = await this.fetch(`/repos/${owner}/${repo}/readme`);
             if (data && data.content) {
+                // Limpiar caracteres de nueva línea del Base64 (GitHub los incluye)
+                const cleanBase64 = data.content.replace(/\n/g, '').replace(/\r/g, '');
                 // Decodificar el contenido Base64
-                const decoded = atob(data.content);
+                const decoded = atob(cleanBase64);
                 // Convertir de UTF-8
                 const text = decodeURIComponent(escape(decoded));
                 return text;
@@ -215,6 +217,7 @@ const GitHubAPI = {
         return {
             id: `${owner}-${repo}`.toLowerCase(),
             name: repoInfo.name,
+            repoName: repo,
             fullName: repoInfo.full_name,
             description: repoInfo.description || 'Sin descripción disponible',
             author: owner,

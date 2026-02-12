@@ -460,7 +460,7 @@ function createAppCard(app, index = 0) {
 
     return `
         <div class="col-12 col-md-6 col-xl-4 animate-fade-in" style="animation-delay: ${index * 0.1}s">
-            <a href="app.html?id=${encodeURIComponent(app.id)}&url=${encodeURIComponent(app.github_url)}" class="app-card-link">
+            <a href="app.html?id=${encodeURIComponent(app.id)}&url=${encodeURIComponent(app.githubUrl || app.github_url)}" class="app-card-link">
                 <article class="app-card">
                     <div class="app-card-header">
                         <div class="app-icon" style="background: linear-gradient(135deg, ${categoryInfo.color || '#8b5cf6'}, ${categoryInfo.color || '#8b5cf6'}dd)">

@@ -4,52 +4,49 @@ SoftHub es una plataforma de catálogo web diseñada para exhibir y centralizar 
 
 ## 🚀 Características Principales
 
-*   **Catálogo Dinámico**: Visualización de tarjetas de proyectos con información en tiempo real.
+*   **Catálogo Dinámico e Inteligente**: Visualización de tarjetas de proyectos con carga híbrida (datos locales + GitHub API).
+*   **Optimización de Datos**: Utiliza `projects.json` como base de datos local para carga instantánea, reduciendo dependencias de red.
 *   **Integración con GitHub API**:
-    *   Obtención automática de metadatos (estrellas, lenguaje, descripción, autor).
-    *   Detección de lenguajes de programación con iconos visuales.
+    *   Obtención de READMEs y lenguajes en tiempo real.
+    *   Fallback automático a la API si el proyecto no está en el índice local.
+    *   Limpieza y formateo de datos (Base64) para una visualización perfecta.
 *   **Sistema de Búsqueda y Filtrado**:
     *   Búsqueda en tiempo real por nombre, autor o tecnología.
     *   Filtrado por categorías (Desarrollo, Educación, Utilidades, Juegos, Ciencia).
-*   **Diseño Moderno y Responsivo**:
-    *   Interfaz adaptada a dispositivos móviles y de escritorio.
-    *   **Modo Oscuro/Claro**: Tema personalizable con persistencia de preferencias.
-    *   Animaciones fluidas y transiciones agradables.
-*   **Base de Datos Híbrida**:
-    *   Combina registros manuales con un sistema de extracción automatizado que identifica enlaces de GitHub desde documentos de talleres entregados por estudiantes (`.docx`, `.txt`).
+*   **Diseño Premium y Responsivo**:
+    *   **Modo Oscuro/Claro**: Tema personalizable con persistencia.
+    *   **Refactorización CSS**: Estilos modulares y optimizados para legibilidad.
+    *   Accesibilidad garantizada en todos los temas.
+*   **Herramienta de Administración Local**: Panel exclusivo para gestores que automatiza la adición de nuevos repositorios.
 
 ## 🛠️ Tecnologías Utilizadas
 
-El proyecto está construido utilizando tecnologías web estándar modernas sin dependencias de frameworks pesados, garantizando rendimiento y facilidad de mantenimiento.
-
-*   **HTML5**: Estructura semántica.
-*   **CSS3**:
-    *   Variables CSS (Custom Properties) para la gestión de temas.
-    *   Flexbox y Grid para el diseño.
-    *   Animaciones nativas.
-    *   Iconos de [Bootstrap Icons](https://icons.getbootstrap.com/).
-*   **JavaScript (ES6+)**:
-    *   Lógica asíncrona (`async/await`) para consumo de APIs.
-    *   Manipulación del DOM.
-    *   Gestión de LocalStorage para preferencias de usuario.
+*   **HTML5 & CSS3**: Diseño modular con variables CSS para temas dinámicos.
+*   **Bootstrap 5**: Estructura responsiva y componentes modernos.
+*   **JavaScript (ES6+)**: Consumo de APIs con `async/await` y gestión de caché local.
+*   **Marked.js**: Renderizado de Markdown para los READMEs.
 
 ## 📂 Estructura del Proyecto
 
 ```text
 SoftHub/
 ├── css/
-│   └── styles.css       # Estilos globales y temas
+│   ├── styles.css       # Estilos globales y sistema de diseño
+│   ├── app.css          # Estilos específicos de la página de detalle
+│   └── admin.css        # Estilos para el panel de administración
+├── data/
+│   └── projects.json    # Base de datos centralizada de proyectos
 ├── js/
-│   ├── main.js          # Lógica principal y catálogo de apps
-│   ├── github-api.js    # Cliente para la API de GitHub con caché
-│   └── ratings.js       # Sistema de calificaciones (simulado)
-├── TALLERES/            # Documentos fuente (Ignorado en repositrio público)
-├── index.html           # Página principal
-├── app.html             # Página de detalle de proyecto
-└── README.md            # Documentación
+│   ├── main.js          # Lógica de la página principal y filtrado
+│   ├── github-api.js    # Cliente API con manejo de errores y caché
+│   └── ratings.js       # Gestión de calificaciones y comentarios
+├── admin.html           # Panel de gestión (Local-only, gitignored)
+├── index.html           # Portal principal
+├── app.html             # Vista de detalle de software
+└── README.md            # Documentación técnica
 ```
 
-## 🔧 Instalación y Uso
+## 🔧 Instalación y Gestión
 
 1.  **Clonar el repositorio**:
     ```bash
@@ -57,30 +54,29 @@ SoftHub/
     cd SoftHub
     ```
 
-2.  **Ejecutar localmente**:
-    Debido a las políticas de seguridad de los navegadores (CORS) y el uso de módulos ES6, se recomienda ejecutar el proyecto a través de un servidor local.
-
-    Con Python 3:
+2.  **Servidor Local**:
+    Recomendado para evitar bloqueos de CORS y manejar correctamente los módulos JS.
     ```bash
+    # Python 3
     python -m http.server 8080
-    ```
-
-    O con Node.js (http-server):
-    ```bash
+    # O Node.js
     npx http-server .
     ```
 
-3.  **Acceder al sitio**:
-    Abre tu navegador y visita `http://localhost:8080`.
+## 🛠️ Administración del Catálogo
 
-## 🤝 Contribución
+Para agregar nuevos proyectos, el sistema incluye una herramienta automatizada:
 
-Este proyecto se alimenta de los trabajos entregados en la carpeta `TALLERES`. Para agregar un nuevo proyecto manualmente:
+1.  Abre **`admin.html`** localmente en tu navegador.
+2.  Pega las URLs de GitHub de los proyectos estudiantiles.
+3.  El sistema obtendrá automáticamente los metadatos.
+4.  Descarga el archivo generado y reemplaza `data/projects.json`.
 
-1.  Abre `js/main.js`.
-2.  Busca el arreglo `SOFTWARE_CATALOG.apps`.
-3.  Agrega un nuevo objeto con el ID y la URL del repositorio de GitHub.
+> **Nota de Seguridad**: El archivo `admin.html` y sus estilos están en el `.gitignore` por seguridad. No se suben al servidor público para evitar accesos no autorizados al flujo de gestión.
 
 ## 📄 Licencia
 
-Este proyecto está disponible bajo la licencia MIT.
+Este proyecto está bajo la licencia MIT.
+```javascript
+// Creado por: Ing. Eduardo Pimienta
+```

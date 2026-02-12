@@ -4,3 +4,7 @@ __pycache__/
 .DS_Store
 Thumbs.db
 *.log
+
+# Admin panel (herramienta local, no subir a produccion)
+admin.html
+css/admin.css

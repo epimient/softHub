@@ -1,0 +1,392 @@
+/* =====================================================
+   SoftHub - App Detail Page Styles
+   Estilos específicos para la página de detalle (app.html)
+   ===================================================== */
+
+/* =====================================================
+   Detail Header
+   ===================================================== */
+
+.app-detail-header {
+    padding: 3rem 0;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.app-detail-icon {
+    width: 120px;
+    height: 120px;
+    background: var(--accent-gradient);
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: white;
+    box-shadow: var(--shadow-lg);
+}
+
+.app-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.meta-badge {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.meta-badge i {
+    color: var(--primary-400);
+}
+
+/* =====================================================
+   README Content
+   ===================================================== */
+
+.readme-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin-top: 2rem;
+    color: var(--text-secondary);
+}
+
+.readme-content h1,
+.readme-content h2,
+.readme-content h3 {
+    color: var(--text-primary);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.readme-content h1:first-child {
+    margin-top: 0;
+}
+
+.readme-content p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.readme-content code {
+    background: var(--bg-input);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    color: var(--primary-400);
+}
+
+.readme-content pre {
+    background: var(--bg-input);
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+    color: var(--text-secondary);
+}
+
+.readme-content pre code {
+    background: none;
+    padding: 0;
+    color: var(--text-secondary);
+}
+
+.readme-content a {
+    color: var(--primary-400) !important;
+}
+
+.readme-content img {
+    max-width: 100%;
+    border-radius: var(--radius-md);
+}
+
+.readme-content ul,
+.readme-content ol {
+    color: var(--text-secondary);
+    padding-left: 1.5rem;
+}
+
+.readme-content blockquote {
+    border-left: 4px solid var(--primary-500);
+    padding-left: 1rem;
+    margin: 1rem 0;
+    color: var(--text-muted);
+}
+
+.readme-content h1,
+.readme-content h2,
+.readme-content h3,
+.readme-content h4,
+.readme-content h5,
+.readme-content h6 {
+    color: var(--text-primary) !important;
+}
+
+.readme-content p,
+.readme-content li,
+.readme-content td,
+.readme-content th,
+.readme-content span,
+.readme-content div {
+    color: var(--text-secondary);
+}
+
+.readme-content strong,
+.readme-content b {
+    color: var(--text-primary);
+}
+
+.readme-content table {
+    border-color: var(--border-color);
+}
+
+.readme-content table th {
+    background: var(--bg-input);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+.readme-content table td {
+    border-color: var(--border-color);
+}
+
+.readme-content hr {
+    border-color: var(--border-color);
+}
+
+/* =====================================================
+   Sidebar
+   ===================================================== */
+
+.sidebar-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.sidebar-card h5 {
+    color: var(--text-primary) !important;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sidebar-card h5 i {
+    color: var(--primary-400);
+}
+
+.sidebar-card .label {
+    color: var(--text-muted);
+}
+
+.sidebar-card .value {
+    color: var(--primary-400) !important;
+}
+
+/* =====================================================
+   Stats Grid
+   ===================================================== */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.stat-box {
+    text-align: center;
+    padding: 1rem;
+    background: var(--bg-input);
+    border-radius: var(--radius-md);
+}
+
+.stat-box .value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-400);
+}
+
+.stat-box .label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+/* =====================================================
+   Languages
+   ===================================================== */
+
+.language-bar {
+    height: 8px;
+    background: var(--bg-input);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+}
+
+.language-segment {
+    height: 100%;
+}
+
+.languages-list {
+    margin-top: 0.75rem;
+}
+
+.language-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.language-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+/* =====================================================
+   Download Button
+   ===================================================== */
+
+.btn-download {
+    background: var(--accent-gradient);
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: var(--radius-md);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all var(--transition-fast);
+    text-decoration: none;
+}
+
+.btn-download:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--accent-glow);
+    color: white;
+}
+
+/* =====================================================
+   Ratings Section
+   ===================================================== */
+
+.ratings-section {
+    margin-top: 2rem;
+}
+
+.ratings-section h3 {
+    color: var(--text-primary) !important;
+}
+
+.average-rating {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.big-rating {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--text-primary) !important;
+}
+
+.rating-details {
+    color: var(--text-muted);
+}
+
+.rating-details .stars {
+    color: #fbbf24;
+    font-size: 1.25rem;
+}
+
+/* =====================================================
+   Dark Mode / Bootstrap Overrides
+   Override Bootstrap defaults that don't respect dark theme
+   ===================================================== */
+
+body {
+    color: var(--text-primary) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary) !important;
+}
+
+p {
+    color: var(--text-secondary);
+}
+
+.lead {
+    color: var(--text-secondary) !important;
+}
+
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+.navbar .btn-outline-secondary {
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+.app-detail-header h1 {
+    color: var(--text-primary) !important;
+}
+
+/* Info list text */
+#infoList span {
+    color: var(--text-secondary);
+}
+
+#infoList .border-bottom {
+    border-color: var(--border-light) !important;
+}
+
+/* =====================================================
+   Forms
+   ===================================================== */
+
+.form-label {
+    color: var(--text-secondary) !important;
+}
+
+.form-control {
+    background: var(--bg-input) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+}
+
+.form-control::placeholder {
+    color: var(--text-muted) !important;
+}
+
+textarea.form-control {
+    background: var(--bg-input) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Spinner text */
+.spinner-border + p,
+.spinner-border ~ p {
+    color: var(--text-muted) !important;
+}

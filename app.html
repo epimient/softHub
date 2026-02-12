@@ -16,240 +16,8 @@
         rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/styles.css" rel="stylesheet">
-    <style>
-        /* Additional styles for detail page */
-        .app-detail-header {
-            padding: 3rem 0;
-            background: var(--bg-secondary);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .app-detail-icon {
-            width: 120px;
-            height: 120px;
-            background: var(--accent-gradient);
-            border-radius: var(--radius-xl);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: white;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .app-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .meta-badge {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            padding: 0.5rem 1rem;
-            border-radius: var(--radius-lg);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        .meta-badge i {
-            color: var(--primary-400);
-        }
-
-        .readme-content {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            margin-top: 2rem;
-        }
-
-        .readme-content h1,
-        .readme-content h2,
-        .readme-content h3 {
-            color: var(--text-primary);
-            margin-top: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .readme-content h1:first-child {
-            margin-top: 0;
-        }
-
-        .readme-content p {
-            color: var(--text-secondary);
-            line-height: 1.8;
-        }
-
-        .readme-content code {
-            background: var(--bg-input);
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            color: var(--primary-400);
-        }
-
-        .readme-content pre {
-            background: var(--bg-input);
-            padding: 1rem;
-            border-radius: var(--radius-md);
-            overflow-x: auto;
-        }
-
-        .readme-content pre code {
-            background: none;
-            padding: 0;
-        }
-
-        .readme-content a {
-            color: var(--primary-400);
-        }
-
-        .readme-content img {
-            max-width: 100%;
-            border-radius: var(--radius-md);
-        }
-
-        .readme-content ul,
-        .readme-content ol {
-            color: var(--text-secondary);
-            padding-left: 1.5rem;
-        }
-
-        .readme-content blockquote {
-            border-left: 4px solid var(--primary-500);
-            padding-left: 1rem;
-            margin: 1rem 0;
-            color: var(--text-muted);
-        }
-
-        .sidebar-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .sidebar-card h5 {
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .sidebar-card h5 i {
-            color: var(--primary-400);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-
-        .stat-box {
-            text-align: center;
-            padding: 1rem;
-            background: var(--bg-input);
-            border-radius: var(--radius-md);
-        }
-
-        .stat-box .value {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-400);
-        }
-
-        .stat-box .label {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-        }
-
-        .language-bar {
-            height: 8px;
-            background: var(--bg-input);
-            border-radius: 4px;
-            overflow: hidden;
-            display: flex;
-        }
-
-        .language-segment {
-            height: 100%;
-        }
-
-        .languages-list {
-            margin-top: 0.75rem;
-        }
-
-        .language-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-        }
-
-        .language-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-
-        .btn-download {
-            background: var(--accent-gradient);
-            border: none;
-            color: white;
-            font-weight: 600;
-            padding: 1rem 2rem;
-            border-radius: var(--radius-md);
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            transition: all var(--transition-fast);
-            text-decoration: none;
-        }
-
-        .btn-download:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--accent-glow);
-            color: white;
-        }
-
-        .ratings-section {
-            margin-top: 2rem;
-        }
-
-        .average-rating {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .big-rating {
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--text-primary);
-        }
-
-        .rating-details {
-            color: var(--text-muted);
-        }
-
-        .rating-details .stars {
-            color: #fbbf24;
-            font-size: 1.25rem;
-        }
-    </style>
+    <!-- Detail Page CSS -->
+    <link href="css/app.css" rel="stylesheet">
 </head>
 
 <body>
@@ -450,13 +218,31 @@
         async function loadAppDetails() {
             const params = getUrlParams();
 
-            if (!params.url) {
-                document.getElementById('appName').textContent = 'Error: No se especificó URL';
+            if (!params.id && !params.url) {
+                document.getElementById('appName').textContent = 'Error: No se especificó proyecto';
                 return;
             }
 
-            // Get app info from GitHub
-            const app = await GitHubAPI.getSoftwareInfo(params.url);
+            let app = null;
+
+            // Intentar cargar desde projects.json primero
+            try {
+                const response = await fetch('data/projects.json');
+                if (response.ok) {
+                    const data = await response.json();
+                    app = data.projects.find(p => p.id === params.id);
+                }
+            } catch (e) {
+                console.warn('No se pudo cargar projects.json:', e);
+            }
+
+            // Fallback: si no se encontró en JSON, intentar con GitHub API
+            if (!app && params.url) {
+                const info = await GitHubAPI.getSoftwareInfo(params.url);
+                if (info) {
+                    app = info;
+                }
+            }
 
             if (!app) {
                 document.getElementById('appName').textContent = 'Error al cargar';
@@ -471,7 +257,7 @@
             document.getElementById('appName').textContent = app.name;
             document.getElementById('appAuthor').innerHTML = `
                 <i class="bi bi-person-circle me-1"></i>
-                <a href="${app.authorUrl}" target="_blank" style="color: var(--primary-400);">${app.author}</a>
+                <a href="${app.authorUrl}" target="_blank" style="color: var(--primary-400);">${app.author_name || app.author}</a>
             `;
             document.getElementById('appDescription').textContent = app.description;
 
@@ -487,7 +273,7 @@
                 </span>
                 <span class="meta-badge">
                     <i class="bi bi-shield-check"></i>
-                    ${app.license}
+                    ${app.license || 'No especificada'}
                 </span>
                 <span class="meta-badge">
                     <i class="bi bi-calendar3"></i>
@@ -497,13 +283,13 @@
             document.getElementById('appMeta').innerHTML = metaHtml;
 
             // Update download button
-            document.getElementById('downloadBtn').href = app.githubUrl;
+            document.getElementById('downloadBtn').href = app.githubUrl || params.url || '#';
 
             // Update stats
-            document.getElementById('statStars').textContent = app.stars;
-            document.getElementById('statForks').textContent = app.forks;
-            document.getElementById('statIssues').textContent = app.openIssues;
-            document.getElementById('statWatchers').textContent = app.watchers;
+            document.getElementById('statStars').textContent = app.stars || 0;
+            document.getElementById('statForks').textContent = app.forks || 0;
+            document.getElementById('statIssues').textContent = app.openIssues || 0;
+            document.getElementById('statWatchers').textContent = app.watchers || 0;
 
             // Update languages
             renderLanguages(app.languages);
@@ -511,8 +297,21 @@
             // Update info
             renderInfo(app);
 
-            // Load README
-            await loadReadme(app.author, app.name);
+            // Obtener owner/repo para la llamada al README
+            const githubUrl = app.githubUrl || params.url;
+            const parsed = GitHubAPI.parseGitHubUrl(githubUrl);
+
+            if (parsed) {
+                // Load README desde GitHub API
+                await loadReadme(parsed.owner, parsed.repo);
+            } else {
+                document.getElementById('readmeContent').innerHTML = `
+                    <div class="text-center py-5">
+                        <i class="bi bi-file-earmark-x text-muted" style="font-size: 3rem;"></i>
+                        <p class="mt-3 text-muted">No se pudo determinar el repositorio para cargar el README</p>
+                    </div>
+                `;
+            }
 
             // Load ratings
             await loadRatings(app.id);

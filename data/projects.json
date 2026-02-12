@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-02-09T16:14:00Z",
-  "totalProjects": 28,
+  "lastUpdated": "2026-02-12T19:16:57.000Z",
+  "totalProjects": 33,
   "projects": [
     {
       "id": "balldontlie-api",
@@ -15,12 +15,18 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["api", "nba", "basketball"],
+      "topics": [
+        "api",
+        "nba",
+        "basketball"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -41,12 +47,17 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["api", "pokemon"],
+      "topics": [
+        "api",
+        "pokemon"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -67,12 +78,17 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["api", "starwars"],
+      "topics": [
+        "api",
+        "starwars"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -93,12 +109,17 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["api", "address"],
+      "topics": [
+        "api",
+        "address"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -119,12 +140,17 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["api", "movies"],
+      "topics": [
+        "api",
+        "movies"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -145,12 +171,18 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["api", "universities", "education"],
+      "topics": [
+        "api",
+        "universities",
+        "education"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -171,12 +203,17 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["api", "jokes"],
+      "topics": [
+        "api",
+        "jokes"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -197,12 +234,17 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["diplomado", "taller"],
+      "topics": [
+        "diplomado",
+        "taller"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -223,12 +265,19 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["api", "weather", "aviation", "metar"],
+      "topics": [
+        "api",
+        "weather",
+        "aviation",
+        "metar"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -249,12 +298,16 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["api"],
+      "topics": [
+        "api"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -275,12 +328,17 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["api", "countries"],
+      "topics": [
+        "api",
+        "countries"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -301,12 +359,17 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["api", "sports"],
+      "topics": [
+        "api",
+        "sports"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -327,12 +390,17 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["api", "news"],
+      "topics": [
+        "api",
+        "news"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -353,12 +421,16 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["api"],
+      "topics": [
+        "api"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -379,12 +451,17 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["api", "crypto"],
+      "topics": [
+        "api",
+        "crypto"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -405,12 +482,18 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["api", "giphy", "gifs"],
+      "topics": [
+        "api",
+        "giphy",
+        "gifs"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -431,12 +514,17 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["api", "taller"],
+      "topics": [
+        "api",
+        "taller"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -457,12 +545,17 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["api", "rickandmorty"],
+      "topics": [
+        "api",
+        "rickandmorty"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -483,12 +576,18 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["api", "ip", "tracker"],
+      "topics": [
+        "api",
+        "ip",
+        "tracker"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -509,12 +608,17 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["api", "movies"],
+      "topics": [
+        "api",
+        "movies"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -535,12 +639,17 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["api", "university"],
+      "topics": [
+        "api",
+        "university"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -561,12 +670,16 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["diplomado"],
+      "topics": [
+        "diplomado"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -587,12 +700,18 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["api", "countries", "cities"],
+      "topics": [
+        "api",
+        "countries",
+        "cities"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -613,12 +732,17 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["api", "countries"],
+      "topics": [
+        "api",
+        "countries"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -639,12 +763,17 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["api", "currency"],
+      "topics": [
+        "api",
+        "currency"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -665,12 +794,17 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["api", "pokemon"],
+      "topics": [
+        "api",
+        "pokemon"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -691,12 +825,17 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["api", "rickandmorty"],
+      "topics": [
+        "api",
+        "rickandmorty"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
@@ -717,15 +856,161 @@
       "forks": 0,
       "watchers": 0,
       "language": "Python",
-      "languages": {"Python": 100},
+      "languages": {
+        "Python": 100
+      },
       "license": "No especificada",
       "createdAt": "2024-01-01T00:00:00Z",
       "updatedAt": "2024-01-01T00:00:00Z",
       "pushedAt": "2024-01-01T00:00:00Z",
-      "topics": ["api", "nasa", "space"],
+      "topics": [
+        "api",
+        "nasa",
+        "space"
+      ],
       "defaultBranch": "main",
       "openIssues": 0,
       "size": 100,
+      "homepage": null,
+      "category": "desarrollo",
+      "featured": false
+    },
+    {
+      "id": "ing-khrismatt-api_clima",
+      "name": "api_clima",
+      "fullName": "Ing-khrismatt/api_clima",
+      "description": "apli con fastapi sobre el clima",
+      "author": "Ing-khrismatt",
+      "author_name": "Ing-khrismatt",
+      "authorUrl": "https://github.com/Ing-khrismatt",
+      "githubUrl": "https://github.com/Ing-khrismatt/api_clima",
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "language": "Desconocido",
+      "languages": {
+        "Python": 31245
+      },
+      "license": "No especificada",
+      "createdAt": "2026-02-03T23:38:28Z",
+      "updatedAt": "2026-02-03T23:38:28Z",
+      "pushedAt": "2026-01-31T00:59:39Z",
+      "topics": [],
+      "defaultBranch": "main",
+      "openIssues": 0,
+      "size": 40,
+      "homepage": null,
+      "category": "desarrollo",
+      "featured": false
+    },
+    {
+      "id": "code72139-whoisthatpoke_fastapi",
+      "name": "whoIsThatPoke_fastapi",
+      "fullName": "code72139/whoIsThatPoke_fastapi",
+      "description": "Sin descripción disponible",
+      "author": "code72139",
+      "author_name": "code72139",
+      "authorUrl": "https://github.com/code72139",
+      "githubUrl": "https://github.com/code72139/whoIsThatPoke_fastapi",
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "language": "Python",
+      "languages": {
+        "Python": 9313
+      },
+      "license": "No especificada",
+      "createdAt": "2026-02-08T23:44:48Z",
+      "updatedAt": "2026-02-08T23:47:23Z",
+      "pushedAt": "2026-02-08T23:47:20Z",
+      "topics": [],
+      "defaultBranch": "master",
+      "openIssues": 0,
+      "size": 81,
+      "homepage": null,
+      "category": "desarrollo",
+      "featured": false
+    },
+    {
+      "id": "jkamellv-apiclima",
+      "name": "apiclima",
+      "fullName": "JkamellV/apiclima",
+      "description": "Sin descripción disponible",
+      "author": "JkamellV",
+      "author_name": "JkamellV",
+      "authorUrl": "https://github.com/JkamellV",
+      "githubUrl": "https://github.com/JkamellV/apiclima",
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "language": "Python",
+      "languages": {
+        "Python": 29741
+      },
+      "license": "No especificada",
+      "createdAt": "2026-02-04T00:36:10Z",
+      "updatedAt": "2026-02-04T00:37:03Z",
+      "pushedAt": "2026-02-04T00:37:00Z",
+      "topics": [],
+      "defaultBranch": "main",
+      "openIssues": 0,
+      "size": 43,
+      "homepage": null,
+      "category": "desarrollo",
+      "featured": false
+    },
+    {
+      "id": "cristian-dev-26-api_chuk_norrys",
+      "name": "api_chuk_norrys",
+      "fullName": "Cristian-dev-26/api_chuk_norrys",
+      "description": "Sin descripción disponible",
+      "author": "Cristian-dev-26",
+      "author_name": "Cristian-dev-26",
+      "authorUrl": "https://github.com/Cristian-dev-26",
+      "githubUrl": "https://github.com/Cristian-dev-26/api_chuk_norrys",
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "language": "Python",
+      "languages": {
+        "Python": 16160
+      },
+      "license": "No especificada",
+      "createdAt": "2026-02-10T02:23:40Z",
+      "updatedAt": "2026-02-10T02:25:23Z",
+      "pushedAt": "2026-02-10T02:25:20Z",
+      "topics": [],
+      "defaultBranch": "main",
+      "openIssues": 0,
+      "size": 10,
+      "homepage": null,
+      "category": "desarrollo",
+      "featured": false
+    },
+    {
+      "id": "diegoshow17-api-countries",
+      "name": "api-countries",
+      "fullName": "diegoshow17/api-countries",
+      "description": "Sin descripción disponible",
+      "author": "diegoshow17",
+      "author_name": "diegoshow17",
+      "authorUrl": "https://github.com/diegoshow17",
+      "githubUrl": "https://github.com/diegoshow17/api-countries",
+      "stars": 0,
+      "forks": 0,
+      "watchers": 0,
+      "language": "JavaScript",
+      "languages": {
+        "JavaScript": 1661
+      },
+      "license": "No especificada",
+      "createdAt": "2026-02-08T20:10:15Z",
+      "updatedAt": "2026-02-08T21:27:04Z",
+      "pushedAt": "2026-02-08T21:27:01Z",
+      "topics": [],
+      "defaultBranch": "main",
+      "openIssues": 0,
+      "size": 43,
       "homepage": null,
       "category": "desarrollo",
       "featured": false
