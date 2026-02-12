@@ -231,9 +231,12 @@
                 if (response.ok) {
                     const data = await response.json();
                     app = data.projects.find(p => p.id === params.id);
+                    if (app) console.log('✓ Proyecto cargado desde projects.json');
+                } else {
+                    console.warn('✗ No se pudo cargar projects.json (status: ' + response.status + ')');
                 }
             } catch (e) {
-                console.warn('No se pudo cargar projects.json:', e);
+                console.warn('⚠ Error al acceder a projects.json:', e);
             }
 
             // Fallback: si no se encontró en JSON, intentar con GitHub API
@@ -395,12 +398,29 @@
                     const html = marked.parse(readme);
                     container.innerHTML = html;
                 } else {
-                    container.innerHTML = `
-                        <div class="text-center py-5">
-                            <i class="bi bi-file-earmark-x text-muted" style="font-size: 3rem;"></i>
-                            <p class="mt-3 text-muted">No se encontró README en este repositorio</p>
-                        </div>
-                    `;
+                    // Verificar si el error fue por límite de API
+                    const error = GitHubAPI.lastError;
+                    if (error && error.status === 403) {
+                        const resetTime = error.reset ? new Date(error.reset * 1000).toLocaleTimeString() : 'un momento';
+                        container.innerHTML = `
+                            <div class="text-center py-5">
+                                <i class="bi bi-clock-history text-warning" style="font-size: 3rem;"></i>
+                                <h4 class="mt-3">Límite de API alcanzado</h4>
+                                <p class="text-muted">GitHub ha limitado temporalmente las peticiones para tu conexión.<br>
+                                Se restablecerá aproximadamente a las <strong>${resetTime}</strong>.</p>
+                                <button onclick="location.reload()" class="btn btn-outline-secondary btn-sm mt-2">
+                                    <i class="bi bi-arrow-clockwise me-1"></i>Reintentar
+                                </button>
+                            </div>
+                        `;
+                    } else {
+                        container.innerHTML = `
+                            <div class="text-center py-5">
+                                <i class="bi bi-file-earmark-x text-muted" style="font-size: 3rem;"></i>
+                                <p class="mt-3 text-muted">No se encontró README en este repositorio</p>
+                            </div>
+                        `;
+                    }
                 }
             } catch (error) {
                 container.innerHTML = `

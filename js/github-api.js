@@ -6,11 +6,14 @@
 const GitHubAPI = {
     // Base URL de la API de GitHub
     baseUrl: 'https://api.github.com',
-    
+
     // Cache local para evitar llamadas repetidas
     cache: new Map(),
     cacheExpiry: 30 * 60 * 1000, // 30 minutos
-    
+
+    // Almacena el último error para diagnóstico
+    lastError: null,
+
     /**
      * Parsea una URL de GitHub para extraer owner y repo
      * @param {string} url - URL del repositorio de GitHub
@@ -25,7 +28,7 @@ const GitHubAPI = {
             const patterns = [
                 /github\.com\/([^\/]+)\/([^\/\s]+)/,
             ];
-            
+
             for (const pattern of patterns) {
                 const match = url.match(pattern);
                 if (match) {
@@ -41,7 +44,7 @@ const GitHubAPI = {
             return null;
         }
     },
-    
+
     /**
      * Obtiene datos del cache si están disponibles y no expiraron
      * @param {string} key - Clave del cache
@@ -55,7 +58,7 @@ const GitHubAPI = {
         this.cache.delete(key);
         return null;
     },
-    
+
     /**
      * Guarda datos en el cache
      * @param {string} key - Clave del cache
@@ -66,7 +69,7 @@ const GitHubAPI = {
             data: data,
             timestamp: Date.now()
         });
-        
+
         // También guardar en localStorage para persistencia
         try {
             const storageKey = 'softhub_cache_' + key;
@@ -79,7 +82,7 @@ const GitHubAPI = {
             console.warn('Could not save to localStorage:', e);
         }
     },
-    
+
     /**
      * Obtiene datos del localStorage cache
      * @param {string} key - Clave del cache
@@ -101,7 +104,7 @@ const GitHubAPI = {
         }
         return null;
     },
-    
+
     /**
      * Realiza una petición a la API de GitHub
      * @param {string} endpoint - Endpoint de la API
@@ -109,18 +112,18 @@ const GitHubAPI = {
      */
     async fetch(endpoint) {
         const cacheKey = endpoint;
-        
+
         // Intentar obtener del cache en memoria
         let cached = this.getFromCache(cacheKey);
         if (cached) return cached;
-        
+
         // Intentar obtener del localStorage
         cached = this.getFromLocalStorage(cacheKey);
         if (cached) {
             this.cache.set(cacheKey, { data: cached, timestamp: Date.now() });
             return cached;
         }
-        
+
         // Hacer la petición
         try {
             const response = await fetch(`${this.baseUrl}${endpoint}`, {
@@ -128,25 +131,32 @@ const GitHubAPI = {
                     'Accept': 'application/vnd.github.v3+json'
                 }
             });
-            
+
             if (!response.ok) {
+                this.lastError = {
+                    status: response.status,
+                    url: endpoint,
+                    reset: response.headers.get('x-ratelimit-reset')
+                };
+
                 if (response.status === 403) {
-                    console.warn('GitHub API rate limit reached');
+                    console.warn('GitHub API rate limit reached or forbidden');
                     return null;
                 }
                 throw new Error(`GitHub API error: ${response.status}`);
             }
-            
+
+            this.lastError = null; // Reset error on success
             const data = await response.json();
             this.saveToCache(cacheKey, data);
             return data;
-            
+
         } catch (error) {
             console.error('Error fetching from GitHub:', error);
             return null;
         }
     },
-    
+
     /**
      * Obtiene información del repositorio
      * @param {string} owner - Propietario del repo
@@ -156,7 +166,7 @@ const GitHubAPI = {
     async getRepoInfo(owner, repo) {
         return await this.fetch(`/repos/${owner}/${repo}`);
     },
-    
+
     /**
      * Obtiene el README del repositorio
      * @param {string} owner - Propietario del repo
@@ -181,7 +191,7 @@ const GitHubAPI = {
             return null;
         }
     },
-    
+
     /**
      * Obtiene los lenguajes del repositorio
      * @param {string} owner - Propietario del repo
@@ -191,7 +201,7 @@ const GitHubAPI = {
     async getLanguages(owner, repo) {
         return await this.fetch(`/repos/${owner}/${repo}/languages`);
     },
-    
+
     /**
      * Obtiene información completa de un software a partir de su URL
      * @param {string} githubUrl - URL del repositorio
@@ -203,16 +213,16 @@ const GitHubAPI = {
             console.error('Invalid GitHub URL:', githubUrl);
             return null;
         }
-        
+
         const { owner, repo } = parsed;
-        
+
         // Obtener información del repositorio
         const repoInfo = await this.getRepoInfo(owner, repo);
         if (!repoInfo) return null;
-        
+
         // Obtener lenguajes
         const languages = await this.getLanguages(owner, repo);
-        
+
         // Construir objeto con la información
         return {
             id: `${owner}-${repo}`.toLowerCase(),
@@ -239,7 +249,7 @@ const GitHubAPI = {
             homepage: repoInfo.homepage || null
         };
     },
-    
+
     /**
      * Obtiene el ícono apropiado según el lenguaje
      * @param {string} language - Lenguaje de programación
@@ -268,7 +278,7 @@ const GitHubAPI = {
         };
         return icons[language] || 'bi-code-slash';
     },
-    
+
     /**
      * Formatea una fecha relativa
      * @param {string} dateStr - Fecha en formato ISO
@@ -279,7 +289,7 @@ const GitHubAPI = {
         const now = new Date();
         const diffMs = now - date;
         const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
-        
+
         if (diffDays === 0) return 'Hoy';
         if (diffDays === 1) return 'Ayer';
         if (diffDays < 7) return `Hace ${diffDays} días`;
